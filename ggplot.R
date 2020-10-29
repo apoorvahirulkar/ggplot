@@ -25,8 +25,10 @@ ggplot(data, aes(x=xValue, y=yValue)) +
   #theme_ipsum() +
   ggtitle("Evolution of something")
 
-#----
-#Area Plots----
+
+
+
+
 #To plot use geom_area() function in ggplot package.
 # create data
 xValue <- 1:50
@@ -75,8 +77,8 @@ library(hrbrthemes)
 Plot2<-data %>%
   ggplot( aes(x=name, y=value, fill=name)) +
   geom_boxplot() +
-  geom_jitter(color="black", size=0.4, alpha=0.9) +
-  #theme_ipsum() +
+  #theme_ipsum(  geom_jitter(color="black", size=0.4, alpha=0.9) +
+) +
   theme(
     legend.position="none",
     plot.title = element_text(size=11)
@@ -119,7 +121,8 @@ ggplot(mtcars, aes(x=as.factor(cyl), fill=as.factor(cyl) )) +
 #theme(legend.position="none")
 #Note:To remove legends in this case, use function: theme(legend.position="none").
 
-#----
+
+
 #Pie Chart----
 #ggplot2 does not offer any specific geom to build piecharts.
 #The trick is to build a stacked barchart with one bar only using the geom_bar()
@@ -272,4 +275,3 @@ Plot1
 directory <-getwd()
 directory
 ggsave("my_fantastic_plot.png")
-
